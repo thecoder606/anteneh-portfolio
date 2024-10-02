@@ -3,177 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BADSHA - Graphic Designer</title>
+    <title>Omar ALAOUI DAHBI - Graphic Designer & Frontend Developer</title>
     <style>
+        :root {
+            --purple-dark: #2d1b69;
+            --purple-light: #3d2b7d;
+            --yellow: #ffd460;
+            --white: #ffffff;
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: Arial, sans-serif;
         }
+        
         body {
-            background-color: #1a1a1a;
-            color: #ffffff;
+            background-color: var(--purple-dark);
+            color: var(--white);
         }
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
+        
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
         }
+        
         .logo {
             font-size: 24px;
             font-weight: bold;
-            color: #ff6600;
         }
+        
         nav ul {
             display: flex;
             list-style-type: none;
         }
+        
         nav ul li {
             margin-left: 20px;
         }
+        
         nav ul li a {
-            color: #ffffff;
+            color: var(--white);
             text-decoration: none;
         }
+        
         .hero {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 50px 0;
         }
+        
         .hero-content {
             flex: 1;
         }
+        
         .hero-content h1 {
             font-size: 48px;
             margin-bottom: 20px;
         }
-        .hero-content h2 {
-            font-size: 36px;
-            color: #ff6600;
-            margin-bottom: 20px;
+        
+        .hero-content p {
+            font-size: 24px;
+            margin-bottom: 30px;
         }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+        }
+        
         .cta-button {
             display: inline-block;
-            background-color: #ff6600;
-            color: #ffffff;
+            background-color: var(--yellow);
+            color: var(--purple-dark);
             padding: 10px 20px;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 25px;
+            font-weight: bold;
         }
+        
         .hero-image {
             flex: 1;
             text-align: right;
         }
+        
         .hero-image img {
             max-width: 100%;
             height: auto;
         }
-        .about {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 50px 0;
+        
+        .about, .services, .skills, .work, .contact {
+            background-color: var(--purple-light);
+            padding: 50px;
+            margin-bottom: 30px;
+            border-radius: 20px;
         }
-        .about-content {
-            flex: 1;
-            padding-right: 50px;
-        }
-        .about-content h2 {
+        
+        .about h2, .services h2, .skills h2, .work h2, .contact h2 {
             font-size: 36px;
             margin-bottom: 20px;
         }
-        .about-image {
-            flex: 1;
-        }
-        .about-image img {
-            max-width: 100%;
-            height: auto;
-        }
-        .resume {
-            padding: 50px 0;
-        }
-        .resume h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-        .experience {
-            margin-top: 30px;
-        }
-        .experience h3 {
-            font-size: 24px;
-            color: #ff6600;
-            margin-bottom: 20px;
-        }
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-        }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background-color: #ff6600;
-        }
-        .timeline-item {
-            margin-bottom: 20px;
-            position: relative;
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -34px;
-            top: 5px;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: #ff6600;
-        }
-        .portfolio {
-            padding: 50px 0;
-        }
-        .portfolio h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-        .portfolio-nav {
-            margin-bottom: 20px;
-        }
-        .portfolio-nav a {
-            color: #ff6600;
-            text-decoration: none;
-            margin-right: 20px;
-        }
-        .portfolio-grid {
+        
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
         }
-        .portfolio-item img {
-            max-width: 100%;
-            height: auto;
+        
+        .service-item {
+            background-color: var(--purple-dark);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
         }
+        
+        .service-item img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-item {
+            text-align: center;
+        }
+        
+        .skill-item img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+        
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .work-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            text-align: center;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px 0;
+        }
+        
         @media (max-width: 768px) {
-            .hero, .about {
+            .hero {
                 flex-direction: column;
             }
-            .hero-content, .about-content {
+            
+            .hero-content, .hero-image {
                 text-align: center;
-                padding-right: 0;
-                margin-bottom: 30px;
             }
-            .hero-image, .about-image {
-                text-align: center;
+            
+            .cta-buttons {
+                justify-content: center;
             }
         }
     </style>
@@ -181,85 +194,115 @@
 <body>
     <div class="container">
         <header>
-            <div class="logo">BADSHA</div>
+            <div class="logo">Omar ALAOUI DAHBI</div>
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#resume">Resume</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#skills">My Skills</a></li>
+                    <li><a href="#work">My Work</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
                 </ul>
             </nav>
         </header>
         
         <section id="home" class="hero">
             <div class="hero-content">
-                <h1>I AM BADSHA PEAKER</h1>
-                <h2>Graphic Designer</h2>
-                <a href="#contact" class="cta-button">Contact Me</a>
+                <h1>Hello, My name is Omar ALAOUI DAHBI,</h1>
+                <p>I'm a Graphic designer & Frontend developer.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="cta-button">Download CV</a>
+                    <a href="#" class="cta-button">Let's talk</a>
+                </div>
             </div>
             <div class="hero-image">
-                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='%23333'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='%23fff'>Designer Image</text></svg>" alt="Designer Portrait">
+                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='%23FFD460'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='%232D1B69'>Avatar</text></svg>" alt="Omar ALAOUI DAHBI">
             </div>
         </section>
         
         <section id="about" class="about">
-            <div class="about-content">
-                <h2>I am a Graphic Designer</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget.</p>
-            </div>
-            <div class="about-image">
-                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='300'><rect width='400' height='300' fill='%23444'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='%23fff'>About Image</text></svg>" alt="About Image">
-            </div>
+            <h2>About Me</h2>
+            <p>Passionate about graphic design and frontend development, I combine creativity and technical skills to create impactful visual experiences. With a strong background in graphic design and expertise in web development, I create Aesthetic, Intuitive, & Responsive user interfaces. My user-centered approach allows me to design captivating visuals and provide an optimal user experience. Continuously seeking the latest trends, I enjoy working on new challenges and collaborating with clients to bring their ideas to life through high-quality graphic design and web experiences.</p>
         </section>
         
-        <section id="resume" class="resume">
-            <h2>My Resume</h2>
-            <div class="experience">
-                <h3>More than 6 years experience as a Designer</h3>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h4>Pentagon Design</h4>
-                        <p>Graphic Designer (2017 - 2019)</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h4>Animate Studio</h4>
-                        <p>Graphic Designer (2015 - 2017)</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h4>Cute Studio</h4>
-                        <p>Graphic Designer (2014 - 2015)</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h4>City Printing</h4>
-                        <p>Graphic Designer (2013 - 2014)</p>
-                    </div>
+        <section id="services" class="services">
+            <h2>My Services</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50'><rect width='50' height='50' fill='%23FFD460'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='8' fill='%232D1B69'>Design</text></svg>" alt="Creative graphic design">
+                    <h3>Creative graphic design</h3>
+                    <p>Visual identity & logo design, UI/UX interface design, Custom illustrations & infographics</p>
+                </div>
+                <div class="service-item">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50'><rect width='50' height='50' fill='%23FFD460'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='8' fill='%232D1B69'>Code</text></svg>" alt="Interactive frontend development">
+                    <h3>Interactive frontend development</h3>
+                    <p>Creation of responsive websites, HTML, CSS, & JavaScript, CMS integration (WordPress)</p>
+                </div>
+                <div class="service-item">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50'><rect width='50' height='50' fill='%23FFD460'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='8' fill='%232D1B69'>UX</text></svg>" alt="User experience (UX) design">
+                    <h3>User experience (UX) design</h3>
+                    <p>UX research and analysis, Creation of user personas, Wireframing & prototyping</p>
+                </div>
+                <div class="service-item">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50'><rect width='50' height='50' fill='%23FFD460'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='8' fill='%232D1B69'>Support</text></svg>" alt="Maintenance and technical support">
+                    <h3>Maintenance and technical support</h3>
+                    <p>Regular website updates, Website performance analysis, 24/7 support</p>
                 </div>
             </div>
         </section>
         
-        <section id="portfolio" class="portfolio">
-            <h2>My Portfolio</h2>
-            <div class="portfolio-nav">
-                <a href="#all">See All</a>
-                <a href="#house">House Plant</a>
-                <a href="#flowers">Flowers</a>
-                <a href="#photography">Photography</a>
+        <section id="skills" class="skills">
+            <h2>About Me</h2>
+            <div class="skills-grid">
+                <div class="skill-item"><img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50'><rect width='50' height='50' fill='%23FFD460'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='8' fill='%232D1B69'>AI</text></svg>" alt="Adobe Illustrator"></div>
+                <div class="skill-item"><img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50'><rect width='50' height='50' fill='%23FFD460'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='8' fill='%232D1B69'>PS</text></svg>" alt="Adobe Photoshop"></div>
+                <div class="skill-item"><img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50'><rect width='50' height='50' fill='%23FFD460'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='8' fill='%232D1B69'>ID</text></svg>" alt="Adobe InDesign"></div>
+                <div class="skill-item"><img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50'><rect width='50' height='50' fill='%23FFD460'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='8' fill='%232D1B69'>Dn</text></svg>" alt="Adobe Dimension"></div>
+                <div class="skill-item"><img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50'><rect width='50' height='50' fill='%23FFD460'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='8' fill='%232D1B69'>Ae</text></svg>" alt="Adobe After Effects"></div>
+                <div class="skill-item"><img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50'><rect width='50' height='50' fill='%23FFD460'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='8' fill='%232D1B69'>Xd</text></svg>" alt="Adobe XD"></div>
+                <div class="skill-item"><img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50'><rect width='50' height='50' fill='%23FFD460'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='8' fill='%232D1B69'>HTML</text></svg>" alt="HTML5"></div>
+                <div class="skill-item"><img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50'><rect width='50' height='50' fill='%23FFD460'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='8' fill='%232D1B69'>CSS</text></svg>" alt="CSS3"></div>
+                <div class="skill-item"><img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50'><rect width='50' height='50' fill='%23FFD460'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='8' fill='%232D1B69'>JS</text></svg>" alt="JavaScript"></div>
+                <div class="skill-item"><img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50'><rect width='50' height='50' fill='%23FFD460'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='8' fill='%232D1B69'>WP</text></svg>" alt="WordPress"></div>
             </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='250' height='250'><rect width='250' height='250' fill='%23008080'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='%23fff'>Portfolio 1</text></svg>" alt="Portfolio 1">
+        </section>
+        
+        <section id="work" class="work">
+            <h2>My WORK</h2>
+            <div class="work-grid">
+                <div class="work-item"><img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='150'><rect width='200' height='150' fill='%23FFD460'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%232D1B69'>Desert</text></svg>" alt="Desert Project"></div>
+                <div class="work-item"><img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='150'><rect width='200' height='150' fill='%23FFD460'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%232D1B69'>LOGIN</text></svg>" alt="Login Project"></div>
+                <div class="work-item"><img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='150'><rect width='200' height='150' fill='%23FFD460'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%232D1B69'>NEXT</text></svg>" alt="Next Project"></div>
+                <div class="work-item"><img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='150'><rect width='200' height='150' fill='%23FFD460'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%232D1B69'>MAGAZINE</text></svg>" alt="Magazine Project"></div>
+                <div class="work-item"><img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='150'><rect width='200' height='150' fill='%23FFD460'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%232D1B69'>MERGER</text></svg>" alt="Merger Project"></div>
+                <div class="work-item"><img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='150'><rect width='200' height='150' fill='%23FFD460'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%232D1B69'>LOGO</text></svg>" alt="Logo Project"></div>
+                <div class="work-item"><img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='150'><rect width='200' height='150' fill='%23FFD460'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%232D1B69'>CART</text></svg>" alt="Cart Project"></div>
+                <div class="work-item"><img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='150'><rect width='200' height='150' fill='%23FFD460'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%232D1B69'>CUT</text></svg>" alt="Cut Project"></div>
+            </div>
+        </section>
+        
+        <section id="contact" class="contact">
+            <h2>Contact ME</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30'><rect width='30' height='30' fill='%23FFD460'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='8' fill='%232D1B69'>@</text></svg>" alt="Email">
+                    <p>@Omaralaoudidahbi</p>
                 </div>
-                <div class="portfolio-item">
-                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='250' height='250'><rect width='250' height='250' fill='%23006400'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='%23fff'>Portfolio 2</text></svg>" alt="Portfolio 2">
+                <div class="contact-item">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30'><rect width='30' height='30' fill='%23FFD460'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='8' fill='%232D1B69'>📍</text></svg>" alt="Location">
+                    <p>Morocco - Meknes</p>
                 </div>
-                <div class="portfolio-item">
-                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='250' height='250'><rect width='250' height='250' fill='%23FFA500'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='%23fff'>Portfolio 3</text></svg>" alt="Portfolio 3">
+                <div class="contact-item">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30'><rect width='30' height='30' fill='%23FFD460'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='8' fill='%232D1B69'>📞</text></svg>" alt="Phone">
+                    <p>+(212) 651-405-939</p>
                 </div>
             </div>
         </section>
     </div>
+    
+    <footer>
+        <p>© 2023 All rights reserved by Omar ALAOUI DAHBI & HEY! DESIGN</p>
+    </footer>
 </body>
 </html>
