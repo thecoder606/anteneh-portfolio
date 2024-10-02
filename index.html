@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bolby Doe - Portfolio</title>
+    <title>BADSHA - Graphic Designer</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
         body {
-            font-family: Arial, sans-serif;
-            background-color: #2d2d3a;
+            background-color: #1a1a1a;
             color: #ffffff;
-            line-height: 1.6;
         }
         .container {
             max-width: 1200px;
@@ -22,114 +21,159 @@
             padding: 20px;
         }
         header {
-            text-align: center;
-            padding: 50px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
         }
-        .profile-img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 20px;
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff6600;
         }
-        .social-icons {
-            margin: 20px 0;
+        nav ul {
+            display: flex;
+            list-style-type: none;
         }
-        .social-icons a {
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
             color: #ffffff;
-            margin: 0 10px;
             text-decoration: none;
         }
-        .btn {
-            background-color: #FF4C60;
-            color: #ffffff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .section {
-            margin-bottom: 60px;
-        }
-        .section-title {
-            font-size: 24px;
-            margin-bottom: 30px;
-        }
-        .card {
-            background-color: #31313f;
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 30px;
-        }
-        .flex-container {
+        .hero {
             display: flex;
-            flex-wrap: wrap;
             justify-content: space-between;
+            align-items: center;
+            padding: 50px 0;
         }
-        .flex-item {
-            flex-basis: calc(33.333% - 20px);
-            margin-bottom: 30px;
+        .hero-content {
+            flex: 1;
         }
-        .skill-bar {
-            background-color: #424250;
-            height: 6px;
-            border-radius: 3px;
+        .hero-content h1 {
+            font-size: 48px;
             margin-bottom: 20px;
         }
-        .skill-progress {
-            height: 100%;
-            border-radius: 3px;
-            background-color: #FF4C60;
+        .hero-content h2 {
+            font-size: 36px;
+            color: #ff6600;
+            margin-bottom: 20px;
         }
-        .stats {
+        .cta-button {
+            display: inline-block;
+            background-color: #ff6600;
+            color: #ffffff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .hero-image {
+            flex: 1;
+            text-align: right;
+        }
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        .about {
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            padding: 50px 0;
+        }
+        .about-content {
+            flex: 1;
+            padding-right: 50px;
+        }
+        .about-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .about-image {
+            flex: 1;
+        }
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        .resume {
+            padding: 50px 0;
+        }
+        .resume h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .experience {
             margin-top: 30px;
         }
-        .stat-item {
-            text-align: center;
+        .experience h3 {
+            font-size: 24px;
+            color: #ff6600;
+            margin-bottom: 20px;
         }
-        .works-grid {
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #ff6600;
+        }
+        .timeline-item {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -34px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ff6600;
+        }
+        .portfolio {
+            padding: 50px 0;
+        }
+        .portfolio h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .portfolio-nav {
+            margin-bottom: 20px;
+        }
+        .portfolio-nav a {
+            color: #ff6600;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+        .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
-        .work-item img {
-            width: 100%;
-            border-radius: 20px;
-        }
-        .pricing-plans {
-            display: flex;
-            justify-content: space-between;
-        }
-        .pricing-plan {
-            flex-basis: calc(33.333% - 20px);
-            text-align: center;
-        }
-        .blog-posts {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            border: none;
-            background-color: #31313f;
-            color: #ffffff;
+        .portfolio-item img {
+            max-width: 100%;
+            height: auto;
         }
         @media (max-width: 768px) {
-            .flex-item {
-                flex-basis: 100%;
-            }
-            .pricing-plans {
+            .hero, .about {
                 flex-direction: column;
             }
-            .pricing-plan {
+            .hero-content, .about-content {
+                text-align: center;
+                padding-right: 0;
                 margin-bottom: 30px;
+            }
+            .hero-image, .about-image {
+                text-align: center;
             }
         }
     </style>
@@ -137,168 +181,85 @@
 <body>
     <div class="container">
         <header>
-            <img src="profile-picture.jpg" alt="Bolby Doe" class="profile-img">
-            <h1>Bolby Doe</h1>
-            <p>I'm a front-end developer</p>
-            <div class="social-icons">
-                <!-- Add social media icons here -->
-            </div>
-            <button class="btn">HIRE ME</button>
+            <div class="logo">BADSHA</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </header>
-
-        <section id="about" class="section">
-            <h2 class="section-title">About Me</h2>
-            <div class="card">
-                <div class="flex-container">
-                    <div class="flex-item">
-                        <img src="about-me-image.jpg" alt="About Me" style="width: 100%; border-radius: 20px;">
-                        <p>I am Bolby Doe, web developer from London, UK. I have rich experience in web site design and building and customization, also I am good at WordPress.</p>
-                        <button class="btn">DOWNLOAD CV</button>
+        
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>I AM BADSHA PEAKER</h1>
+                <h2>Graphic Designer</h2>
+                <a href="#contact" class="cta-button">Contact Me</a>
+            </div>
+            <div class="hero-image">
+                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='%23333'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='%23fff'>Designer Image</text></svg>" alt="Designer Portrait">
+            </div>
+        </section>
+        
+        <section id="about" class="about">
+            <div class="about-content">
+                <h2>I am a Graphic Designer</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget.</p>
+            </div>
+            <div class="about-image">
+                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='300'><rect width='400' height='300' fill='%23444'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='%23fff'>About Image</text></svg>" alt="About Image">
+            </div>
+        </section>
+        
+        <section id="resume" class="resume">
+            <h2>My Resume</h2>
+            <div class="experience">
+                <h3>More than 6 years experience as a Designer</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Pentagon Design</h4>
+                        <p>Graphic Designer (2017 - 2019)</p>
                     </div>
-                    <div class="flex-item">
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 80%;"></div>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 95%;"></div>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 70%;"></div>
-                        </div>
+                    <div class="timeline-item">
+                        <h4>Animate Studio</h4>
+                        <p>Graphic Designer (2015 - 2017)</p>
                     </div>
-                </div>
-                <div class="stats">
-                    <div class="stat-item">
-                        <h3>198</h3>
-                        <p>Projects completed</p>
+                    <div class="timeline-item">
+                        <h4>Cute Studio</h4>
+                        <p>Graphic Designer (2014 - 2015)</p>
                     </div>
-                    <div class="stat-item">
-                        <h3>5670</h3>
-                        <p>Cup of coffee</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>427</h3>
-                        <p>Satisfied clients</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>35</h3>
-                        <p>Nominees winner</p>
+                    <div class="timeline-item">
+                        <h4>City Printing</h4>
+                        <p>Graphic Designer (2013 - 2014)</p>
                     </div>
                 </div>
             </div>
         </section>
-
-        <section id="services" class="section">
-            <h2 class="section-title">Services</h2>
-            <div class="flex-container">
-                <div class="flex-item card">
-                    <h3>UI/UX design</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        
+        <section id="portfolio" class="portfolio">
+            <h2>My Portfolio</h2>
+            <div class="portfolio-nav">
+                <a href="#all">See All</a>
+                <a href="#house">House Plant</a>
+                <a href="#flowers">Flowers</a>
+                <a href="#photography">Photography</a>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='250' height='250'><rect width='250' height='250' fill='%23008080'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='%23fff'>Portfolio 1</text></svg>" alt="Portfolio 1">
                 </div>
-                <div class="flex-item card">
-                    <h3>Web Development</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div class="portfolio-item">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='250' height='250'><rect width='250' height='250' fill='%23006400'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='%23fff'>Portfolio 2</text></svg>" alt="Portfolio 2">
                 </div>
-                <div class="flex-item card">
-                    <h3>Photography</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div class="portfolio-item">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='250' height='250'><rect width='250' height='250' fill='%23FFA500'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='%23fff'>Portfolio 3</text></svg>" alt="Portfolio 3">
                 </div>
             </div>
-        </section>
-
-        <section id="experience" class="section">
-            <h2 class="section-title">Experience</h2>
-            <div class="flex-container">
-                <div class="flex-item">
-                    <h3>Academic Degree</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <div class="flex-item">
-                    <h3>Bachelor's Degree</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <div class="flex-item">
-                    <h3>Web Designer</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <div class="flex-item">
-                    <h3>Front-End Developer</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="works" class="section">
-            <h2 class="section-title">Recent Works</h2>
-            <div class="works-grid">
-                <!-- Add 6 work items here -->
-                <div class="work-item">
-                    <img src="work1.jpg" alt="Work 1">
-                </div>
-                <!-- Repeat for other work items -->
-            </div>
-            <button class="btn">LOAD MORE</button>
-        </section>
-
-        <section id="pricing" class="section">
-            <h2 class="section-title">Pricing Plans</h2>
-            <div class="pricing-plans">
-                <div class="pricing-plan card">
-                    <h3>Basic</h3>
-                    <p>A Simple option but powerful to manage your business</p>
-                    <p>Email support</p>
-                    <h4>$9</h4>
-                    <p>per month</p>
-                    <button class="btn">GET STARTED</button>
-                </div>
-                <div class="pricing-plan card">
-                    <h3>Premium</h3>
-                    <p>Unlimited product including app integration and more features</p>
-                    <p>Mon-Fri support</p>
-                    <h4>$49</h4>
-                    <p>per month</p>
-                    <button class="btn">GET STARTED</button>
-                </div>
-                <div class="pricing-plan card">
-                    <h3>Ultimate</h3>
-                    <p>A wise option for large companies and individuals</p>
-                    <p>24/7 support</p>
-                    <h4>$99</h4>
-                    <p>per month</p>
-                    <button class="btn">GET STARTED</button>
-                </div>
-            </div>
-        </section>
-
-        <section id="testimonials" class="section">
-            <h2 class="section-title">Clients & Reviews</h2>
-            <!-- Add testimonial carousel here -->
-        </section>
-
-        <section id="blog" class="section">
-            <h2 class="section-title">Latest Posts</h2>
-            <div class="blog-posts">
-                <!-- Add 3 blog post items here -->
-            </div>
-            <button class="btn">VIEW BLOG</button>
-        </section>
-
-        <section id="contact" class="section">
-            <h2 class="section-title">Get in Touch</h2>
-            <form class="contact-form">
-                <input type="text" placeholder="YOUR NAME">
-                <input type="email" placeholder="YOUR EMAIL">
-                <input type="text" placeholder="YOUR SUBJECT">
-                <textarea placeholder="YOUR MESSAGE"></textarea>
-                <button type="submit" class="btn">SEND MESSAGE</button>
-            </form>
         </section>
     </div>
-
-    <footer>
-        <div class="container">
-            <p>© 2024 Bolby Template. All right reserved.</p>
-        </div>
-    </footer>
 </body>
 </html>
