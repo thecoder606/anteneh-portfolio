@@ -4,307 +4,574 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ANTENEH AYALEW - Graphic Designer & Digital Illustrator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&family=Pacifico&display=swap" rel="stylesheet">
     <style>
         :root {
-            --purple-dark: #2d1b69;
-            --purple-light: #3d2b7d;
-            --yellow: #ffd460;
-            --white: #ffffff;
+            --primary-color: #4A0E4E;
+            --secondary-color: #8E44AD;
+            --text-color: #FFFFFF;
+            --accent-color: #FFD700;
+            --gradient-start: #2C0A2E;
+            --gradient-end: #6A1B9A;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
         }
-        
+
         body {
-            background-color: var(--purple-dark);
-            color: var(--white);
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            background-attachment: fixed;
+            background-size: cover;
         }
-        
+
+        .background-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
         }
-        
+
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
+            background-color: rgba(74, 14, 78, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
         }
-        
-        .logo {
-            font-size: 20px;
-            font-weight: bold;
-        }
-        
+
         nav ul {
             display: flex;
+            justify-content: center;
             list-style-type: none;
         }
-        
+
         nav ul li {
-            margin-left: 20px;
+            margin: 0 15px;
         }
-        
+
         nav ul li a {
-            color: var(--white);
+            color: var(--text-color);
             text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            font-family: 'Playfair Display', serif;
         }
-        
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+            font-family: 'Playfair Display', serif;
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            color: var(--text-color);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
         .hero {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 50px 0;
+            min-height: 80vh;
         }
-        
+
         .hero-content {
             flex: 1;
+            padding-right: 2rem;
         }
-        
-        .hero-content h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        
-        .hero-content p {
-            font-size: 24px;
-            margin-bottom: 30px;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: var(--yellow);
-            color: var(--purple-dark);
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-        }
-        
+
         .hero-image {
             flex: 1;
-            text-align: right;
+            text-align: center;
         }
-        
+
         .hero-image img {
-            width: 50%;
-            height:50%;
-            border-radius:50px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
         }
-        
-        .about, .services, .skills, .work, .contact {
-            background-color: var(--purple-light);
-            padding: 50px;
-            margin-bottom: 30px;
-            border-radius: 20px;
-        }
-        
-        .about h2, .services h2, .skills h2, .work h2, .contact h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-        
-        .services-grid {
+
+        .services-grid, .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
-        
-        .service-item {
-            background-color: var(--purple-dark);
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-        }
-        
-        .service-item img {
-            width: 70px;
-            height: 70px;
-            border-radius: 15px;
-            margin-bottom: 10px;
-        }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-            gap: 20px;
-        }
-        
-        .skill-item {
-            text-align: center;
-            background-color:transparent;
+
+        .service-item, .skill-item {
+            background-color: rgba(142, 68, 173, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
             border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
-        .skill-item img {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 10px;
+
+        .service-item:hover, .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(255, 215, 0, 0.2);
         }
-        
-        .work-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+
+        .service-item img, .skill-item img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
         }
-        
+
+        .work-category {
+            margin-bottom: 2rem;
+        }
+
+        .work-scroll {
+            display: flex;
+            overflow-x: auto;
+            gap: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .work-item {
+            flex: 0 0 auto;
+            width: 250px;
+        }
+
         .work-item img {
             width: 100%;
             height: auto;
             border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
-        
+
+        .work-item img:hover {
+            transform: scale(1.05);
+        }
+
         .contact-info {
             display: flex;
-            justify-content: space-around;
-            margin-top: 30px;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
         }
-        
-        .contact-item {
-            text-align: center;
-            
+
+        .contact-item img {
+            width: 50px;
+            height: 50px;
+            transition: transform 0.3s ease;
         }
-        
+
+        .contact-item img:hover {
+            transform: scale(1.1);
+        }
+
         footer {
+            background-color: rgba(74, 14, 78, 0.8);
+            backdrop-filter: blur(10px);
+            color: var(--text-color);
             text-align: center;
-            padding: 20px 0;
+            padding: 1rem 0;
+            margin-top: 2rem;
+            font-family: 'Pacifico', cursive;
         }
-        
+
+        .resume-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .resume-button:hover {
+            background-color: #FFE55C;
+        }
+
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .slide-in-left.appear {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(100px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .slide-in-right.appear {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.5);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .scale-in.appear {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Stagger effect for grid items */
+        .stagger-in > * {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .stagger-in > *.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .skill-item {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .skill-item .skill-circle {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, var(--accent-color) 50%, transparent 50%);
+            border-radius: 50%;
+            transform: rotate(45deg);
+        }
+
+        .skill-item .skill-image {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+        }
+
+        .skill-item .skill-circle::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 120px;
+            background-color: var(--gradient-start);
+            border-radius: 50%;
+        }
+
+        .skill-item .skill-circle .fill {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 120px;
+            background-color: var(--gradient-start);
+            border-radius: 50%;
+            clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(45deg);
+            }
+            100% {
+                transform: rotate(405deg);
+            }
+        }
+
+        .skill-item.appear .skill-circle {
+            animation: rotate 1s ease-in-out forwards;
+        }
+
+        .skill-item.appear .skill-circle .fill {
+            transform: translate(-50%, -50%) rotate(180deg);
+        }
+
         @media (max-width: 768px) {
             .hero {
                 flex-direction: column;
-            }
-            
-            .hero-content, .hero-image {
                 text-align: center;
             }
-            
-            .cta-buttons {
-                justify-content: center;
+
+            .hero-content {
+                padding-right: 0;
+                margin-bottom: 2rem;
+            }
+
+            .services-grid, .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
 </head>
 <body>
+    <svg class="background-pattern" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+            <pattern id="graphic-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                <circle cx="50" cy="50" r="25" fill="rgba(255,215,0,0.1)" />
+                <rect x="0" y="0" width="50" height="50" fill="rgba(255,215,0,0.05)" />
+                <polygon points="0,0 50,50 0,100" fill="rgba(255,215,0,0.05)" />
+                <line x1="0" y1="0" x2="100" y2="100" stroke="rgba(255,215,0,0.1)" stroke-width="2" />
+                <line x1="100" y1="0" x2="0" y2="100" stroke="rgba(255,215,0,0.1)" stroke-width="2" />
+            </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#graphic-pattern)" />
+    </svg>
+
+    <svg width="100%" height="100%" style="position: fixed; top: 0; left: 0; z-index: -1; opacity: 0.05;">
+        <pattern id="pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+            <circle cx="20" cy="20" r="15" fill="none" stroke="#FFD700" stroke-width="2"/>
+            <path d="M5 20 L35 20 M20 5 L20 35" stroke="#FFD700" stroke-width="2"/>
+        </pattern>
+        <rect width="100%" height="100%" fill="url(#pattern)"/>
+    </svg>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#work">Work</a></li>
+            </ul>
+        </nav>
+    </header>
+    
     <div class="container">
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#work">Work</a></li>
-                    
-                </ul>
-            </nav>
-        </header>
-        
         <section id="home" class="hero">
-            <div class="hero-content">
+            <div class="hero-content fade-in">
                 <h1>Hello, My name is ANTENEH AYALEW,</h1>
-                <h2 style="color:var(--yellow);">I'm a Graphic designer & Digital Illustrator.</h2>
+                <h2 style="color:var(--accent-color); font-family: 'Pacifico', cursive;">I'm a Graphic designer & Digital Illustrator.</h2>
+                <a href="#" class="resume-button">Download Resume</a>
             </div>
-            <div class="hero-image">
+            <div class="hero-image fade-in">
                 <img src="profile pic.jpg" alt="Anteneh Ayalew">
             </div>
         </section>
         
-        <section id="about" class="about">
+        <section id="about" class="about fade-in">
             <h2>About Me</h2>
-            <p style="color:var(--yellow);">Hey there! I'm Anteneh, a budding graphic designer and digital illustrator. I've always loved the power of visuals to tell stories. As a beginner, I'm excited to explore different design styles and techniques. I'm passionate about creating eye-catching designs and unique illustrations. Let's connect and create together!</p>
+            <p style="color:var(--text-color); font-family: 'Roboto', sans-serif; font-weight: 300;">Hey there! I'm Anteneh, a budding graphic designer and digital illustrator. I've always loved the power of visuals to tell stories. As a beginner, I'm excited to explore different design styles and techniques. I'm passionate about creating eye-catching designs and unique illustrations. Let's connect and create together!</p>
         </section>
         
         <section id="services" class="services">
-            <h2>My Services</h2>
-            <div class="services-grid">
+            <h2 class="fade-in">My Services</h2>
+            <div class="services-grid stagger-in">
                 <div class="service-item">
                     <img src="https://i.pinimg.com/564x/d3/17/7b/d3177b5613c7ee3e47d7920807c3f1fc.jpg"  alt="Creative graphic design">
                     <h3>Logo Design</h3>
-                    <p style="color:var(--yellow);"> Creating unique and memorable logos that represent a brand's identity.</p>
+                    <p style="color:var(--text-color);">Creating unique and memorable logos that represent a brand's identity.</p>
                 </div>
                 <div class="service-item">
                     <img src="https://i.pinimg.com/564x/99/8d/43/998d435d8d4159dc0ab0f4388cbe26b7.jpg" alt="Interactive frontend development">
                     <h3>Print Design</h3>
-                    <p style="color:var(--yellow);">Designing materials such as business cards, brochures, flyers, and posters.</p>
+                    <p style="color:var(--text-color);">Designing materials such as business cards, brochures, flyers, and posters.</p>
                 </div>
                 <div class="service-item">
-                    <img src="https://i.pinimg.com/564x/ff/5b/4a/ff5b4af70de047b1b2ca3aaaf699dfcf.jpg" alt="User experience (UX) design">
-                    <h3>Digital Design</h3>
-                    <p style="color:var(--yellow);">Creating graphics for websites, social media, and digital advertisements.</p>
+                    <img src="https://i.pinimg.com/564x/c2/2c/0d/c22c0d98bb2e6b4a8fc7501fc2b25f8f.jpg" alt="Backend development and API integration">
+                    <h3>Digital Illustration</h3>
+                    <p style="color:var(--text-color);">Creating vibrant and unique illustrations for various digital platforms.</p>
                 </div>
                 <div class="service-item">
-                    <img src="https://i.pinimg.com/564x/de/15/5a/de155a33573d8ae218c5e777a194752f.jpg" alt="Maintenance and technical support">
-                    <h3>Illustration</h3>
-                    <p style="color:var(--yellow);">Creating original illustrations for various purposes, such as children's books, magazines, or advertisements.</p>
+                    <img src="https://i.pinimg.com/564x/29/41/c1/2941c101c2ac26600ff75e9d6c09d3a0.jpg" alt="Data visualization and analytics">
+                    <h3>Social Media Design</h3>
+                    <p style="color:var(--text-color);">Designing eye-catching graphics for social media platforms.</p>
                 </div>
             </div>
         </section>
         
         <section id="skills" class="skills">
-            <h2>My Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-item"><img src="adobe-photoshop.png" alt="Adobe photoshop"></div>
-                <div class="skill-item"><img src="adobe-illustrator.png" alt="Adobe illustrator"></div>
-                <div class="skill-item"><img src="adobe-indesign.png" alt="Adobe indesign"></div>
-                <div class="skill-item"><img src="figma.png" alt="figma"></div>
+            <h2 class="fade-in">My Skills</h2>
+            <div class="skills-grid stagger-in">
+                <div class="skill-item">
+                    <div class="skill-circle">
+                        <div class="fill"></div>
+                    </div>
+                    <div class="skill-image">
+                        <img src="https://i.pinimg.com/564x/87/b9/7f/87b97f8f9279dd166da6a8a6d97d6f8f.jpg" alt="Photoshop">
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-circle">
+                        <div class="fill"></div>
+                    </div>
+                    <div class="skill-image">
+                        <img src="https://i.pinimg.com/564x/f5/db/2f/f5db2f3d701cb7c95fca66c876072ccb.jpg" alt="Illustrator">
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-circle">
+                        <div class="fill"></div>
+                    </div>
+                    <div class="skill-image">
+                        <img src="https://i.pinimg.com/564x/34/67/f3/3467f3ac649bad30a67ffe4009b5ddbe.jpg" alt="Figma">
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-circle">
+                        <div class="fill"></div>
+                    </div>
+                    <div class="skill-image">
+                        <img src="https://i.pinimg.com/564x/67/25/65/6725650004fed4fe4ac21525b1c5ed78.jpg" alt="Canva">
+                    </div>
+                </div>
             </div>
         </section>
         
-      <section id="work" class="work">
-    <h2>My WORK</h2>
-    <div class="work-grid">
-        <div class="work-item"><img src="jordan 4.jpg" alt="jordan 4"></div>
-        <div class="work-item"><img src="beats.jpg" alt="beats"></div>
-        <div class="work-item"><img src="Artboard 1.jpg" alt="new year"></div>
-        <div class="work-item"><img src="mercedes.jpg" alt="mercedes"></div>
-        <div class="work-item"><img src="smart watch.jpg" alt="smart watch"></div>
-        <div class="work-item"><img src="sneaker.jpg" alt="sneaker"></div>
-        <div class="work-item"><img src="vision pro.jpg" alt="veision pro"></div>
-        <div class="work-item"><img src="Cat Sketch.jpg" alt="car sketch"></div>
-        <div class="work-item"><img src="Artboard 1-100.jpg" alt="naruto"></div>
-        <div class="work-item"><img src="digital marketing.jpg" alt="digital marketing"></div>
-       
-        
-    </div>
-</section>
+        <section id="work" class="work">
+            <h2 class="fade-in">My Work</h2>
+            <div class="work-category slide-in-left">
+                <h3>Digital Illustrations</h3>
+                <div class="work-scroll">
+                    <div class="work-item">
+                        <img src="https://i.pinimg.com/564x/2a/76/ce/2a76ce71ac0a4da18cf4e18e68e1742b.jpg" alt="Digital Illustration 1">
+                    </div>
+                    <div class="work-item">
+                        <img src="https://i.pinimg.com/564x/a7/a5/c1/a7a5c1b19f106f6bc51c5cf66ab7c47e.jpg" alt="Digital Illustration 2">
+                    </div>
+                    <div class="work-item">
+                        <img src="https://i.pinimg.com/564x/6d/88/18/6d88183e1b10f4d07d1a18b0b11426dc.jpg" alt="Digital Illustration 3">
+                    </div>
+                    <div class="work-item">
+                        <img src="https://i.pinimg.com/564x/40/99/7f/40997f6f26a414aee42b6bbd4d1f7d6a.jpg" alt="Digital Illustration 4">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="work-category slide-in-right">
+                <h3>Graphic Designs</h3>
+                <div class="work-scroll">
+                    <div class="work-item">
+                        <img src="https://i.pinimg.com/564x/47/11/f1/4711f1fda21cdc80eb6c1d9f8a3a4aeb.jpg" alt="Graphic Design 1">
+                    </div>
+                    <div class="work-item">
+                        <img src="https://i.pinimg.com/564x/23/f0/89/23f08985d99f1a90bbe81b8aab6a80a6.jpg" alt="Graphic Design 2">
+                    </div>
+                    <div class="work-item">
+                        <img src="https://i.pinimg.com/564x/b1/c9/4c/b1c94cebecaee6b19f4eee9babb8d3b2.jpg" alt="Graphic Design 3">
+                    </div>
+                    <div class="work-item">
+                        <img src="https://i.pinimg.com/564x/35/d0/e3/35d0e30965c0eac1ac86aabb97cb8a4a.jpg" alt="Graphic Design 4">
+                    </div>
+                </div>
+            </div>
+        </section>
         
         <section id="contact" class="contact">
-            <h2>Contact ME</h2>
-            <div class="contact-info">
+            <h2 class="fade-in">Get in Touch</h2>
+            <div class="contact-info scale-in">
                 <div class="contact-item">
-                    <a href="https://t.me/Dominion1_26">
-                      <img src="telegram.png" width="50" height="50" alt="Phone">
-                    </a>
+                    <a href="mailto:antenehayalew@example.com"><img src="https://i.pinimg.com/564x/14/a3/46/14a346f9aed0feca9f94a0b8e0d25eb5.jpg" alt="Email"></a>
                 </div>
                 <div class="contact-item">
-                   <a href="https://www.instagram.com/iamanteneh?igsh=ZGUzMzM3NWJiOQ==">
-                      <img src="instagram.png" width="50" height="50" alt="Phone">
-                    </a>
+                    <a href="https://www.linkedin.com/in/anteneh-ayalew-example/"><img src="https://i.pinimg.com/564x/18/9e/52/189e5285a551e5ce9e7a421d9f1c0d67.jpg" alt="LinkedIn"></a>
                 </div>
                 <div class="contact-item">
-                    <a href="https://wa.me/qr/ZVHTT3GNW5NJG1">
-                      <img src="whatsapp.png" width="50" height="50" alt="Phone">
-                    </a>
-                   
+                    <a href="https://www.instagram.com/anteneh_ayalew/"><img src="https://i.pinimg.com/564x/38/11/bf/3811bfaf8a7d6cfb54b0b580c02c0f11.jpg" alt="Instagram"></a>
+                </div>
+                <div class="contact-item">
+                    <a href="tel:+123456789"><img src="https://i.pinimg.com/564x/36/ff/4e/36ff4ea9f46e6ba1673fde4f305b2dee.jpg" alt="Phone"></a>
                 </div>
             </div>
         </section>
     </div>
     
     <footer>
-        <p>© 2024 All rights reserved by ANTENEH AYALEW</p>
+        <p>&copy; ANTENEH AYALEW 2024. All rights reserved.</p>
     </footer>
+    
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const fadeInElements = document.querySelectorAll('.fade-in');
+            const slideInLeftElements = document.querySelectorAll('.slide-in-left');
+            const slideInRightElements = document.querySelectorAll('.slide-in-right');
+            const scaleInElements = document.querySelectorAll('.scale-in');
+            const staggerInElements = document.querySelectorAll('.stagger-in > *');
+            const skillItems = document.querySelectorAll('.skill-item');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('appear');
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            fadeInElements.forEach((element) => observer.observe(element));
+            slideInLeftElements.forEach((element) => observer.observe(element));
+            slideInRightElements.forEach((element) => observer.observe(element));
+            scaleInElements.forEach((element) => observer.observe(element));
+            staggerInElements.forEach((element) => observer.observe(element));
+            skillItems.forEach((element) => observer.observe(element));
+        });
+    </script>
 </body>
 </html>
