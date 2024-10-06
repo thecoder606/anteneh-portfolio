@@ -459,7 +459,7 @@
             <div class="skills-grid stagger-in">
                 <div class="skill-item">
                     <div class="skill-circle">
-                        <div class="fill"></div>
+                        <div class="fill">80%</div>
                     </div>
                     <div class="skill-image">
                         <img src="adobe-photoshop.png" alt="Photoshop">
@@ -467,7 +467,7 @@
                 </div>
                 <div class="skill-item">
                     <div class="skill-circle">
-                        <div class="fill"></div>
+                        <div class="fill">65%</div>
                     </div>
                     <div class="skill-image">
                         <img src="adobe-illustrator.png" alt="Illustrator">
@@ -475,7 +475,7 @@
                 </div>
                 <div class="skill-item">
                     <div class="skill-circle">
-                        <div class="fill"></div>
+                        <div class="fill">45%</div>
                     </div>
                     <div class="skill-image">
                         <img src="adobe-indesign.png" alt="Figma">
@@ -483,7 +483,7 @@
                 </div>
                 <div class="skill-item">
                     <div class="skill-circle">
-                        <div class="fill"></div>
+                        <div class="fill">90%</div>
                     </div>
                     <div class="skill-image">
                         <img src="figma.png" alt="Canva">
@@ -564,19 +564,6 @@
     </footer>
     
     <script>
-        function getRandomNumber(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
-
-        function setRandomNumbers() {
-            for (let i = 1; i <= 4; i++) {
-                const skillElement = document.getElementById(`skill${i}`);
-                const randomNumber = getRandomNumber(40, 100);
-                skillElement.textContent = `${randomNumber}%`;
-            }
-        }
-
-        setRandomNumbers();
         window.addEventListener('DOMContentLoaded', () => {
             const fadeInElements = document.querySelectorAll('.fade-in');
             const slideInLeftElements = document.querySelectorAll('.slide-in-left');
