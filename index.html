@@ -372,6 +372,72 @@
                 flex-basis: 100%;
             }
         }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            max-height: 80%;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.3s ease;
+        }
+
+        .modal-description {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal.show {
+            opacity: 1;
+        }
+
+        .modal.show .modal-content,
+        .modal.show .modal-description {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -589,8 +655,75 @@
     <footer>
         <p>&copy; ANTENEH AYALEW 2024. All rights reserved.</p>
     </footer>
+
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="modalDescription" class="modal-description"></div>
+    </div>
     
     <script>
+         // Add this new code for handling the modal functionality
+         const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const modalDescription = document.getElementById('modalDescription');
+        const closeBtn = document.getElementsByClassName('close')[0];
+
+        // Get all work items
+        const workItems = document.querySelectorAll('.work-item img');
+
+        // Add click event to each work item
+        workItems.forEach(item => {
+            item.addEventListener('click', function() {
+                modal.style.display = 'block';
+                modalImg.src = this.src;
+                modalDescription.innerHTML = getImageDescription(this.alt);
+                setTimeout(() => {
+                    modal.classList.add('show');
+                }, 10);
+            });
+        });
+
+        // Close modal when clicking the close button
+        closeBtn.onclick = function() {
+            modal.classList.remove('show');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+
+        // Close modal when clicking outside the image
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.classList.remove('show');
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                }, 300);
+            }
+        }
+
+        // Function to get image description (you can customize this)
+        function getImageDescription(alt) {
+            const descriptions = {
+                'Social media post 1': 'A vibrant social media post design showcasing a special burger offer.',
+                'Social media post 2': 'An engaging social media design promoting a new pizza flavor.',
+                'Social media post 3': 'A cute and playful social media post for a pet care service.',
+                'Social media post 4': 'A stylish product showcase for the latest Jordan 4 sneakers.',
+                'Digital Illustration 1': 'A detailed digital illustration of a character from the anime "Spirited Away".',
+                'Digital Illustration 2': 'An eerie yet captivating digital illustration of a skeleton figure.',
+                'Digital Illustration 3': 'A charming digital sketch of a cat, showcasing line art techniques.'
+            };
+            return descriptions[alt] || 'A creative piece from my portfolio.';
+        }
+
+
+
+
+
+
+
+
+
         window.addEventListener('DOMContentLoaded', () => {
             const fadeInElements = document.querySelectorAll('.fade-in');
             const slideInLeftElements = document.querySelectorAll('.slide-in-left');
